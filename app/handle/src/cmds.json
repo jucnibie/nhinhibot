@@ -1,0 +1,60 @@
+{
+    "cmds": [
+        "lenny",
+        "hug",
+        "kiss",
+        "slap",
+        "mlem",
+        "care",
+        "report",
+        "waifu",
+        "roll",
+        "osuinfo",
+        "math",
+        "steam",
+        "weather",
+        "say",
+        "rank",
+        "corona",
+        "choose",
+        "echo",
+        "ping",
+        "tát",
+        "đấm",
+        "sim",
+        "help",
+        "nhentai",
+        "hentaivn",
+        "anime",
+        "wiki",
+        "time",
+        "youtube",
+        "facebook",
+        "trans",
+        "quotes",
+        "gỡ",
+        "uptime",
+        "meme",
+        "gif",
+        "request",
+        "balance",
+        "daily",
+        "thăm ngàn",
+        "roul",
+        "sl",
+        "coinflip",
+        "kbb",
+        "info",
+        "porn"
+    ],
+    "banned": [
+        {
+            "id": 2947450098670450,
+            "cmds": []
+        },
+        {
+            "id": 3210839725593462,
+            "cmds": []
+        }
+    ]
+}
