@@ -7,10 +7,10 @@
       "group":"general"
    },
    {
-      "name":"sumi",
-      "decs":"Gọi sumi",
-      "usage":"sumi",
-      "example":"sumi",
+      "name":"nhinhi",
+      "decs":"Gọi Nhi Nhi",
+      "usage":"nhinhi",
+      "example":"nhinhi",
       "group":"general"
    },
    {
@@ -226,7 +226,7 @@
    {
       "name":"porn",
       "decs":"cái tên nói lên tất cả ( ͡° ͜ʖ ͡°)",
-      "usage":"porn [boobs, cum, bj, feet, ass, sex, pussy, teen, bdsm, asian, pornstar]",
+      "usage":"porn [boobs, cum, bj, feet, ass, sex, pussy, teen, bdsm, asian, pornstar, evaelfie, chinese, eimifukada]",
       "example":"porn boobs",
       "group":"nsfw"
    },
@@ -368,6 +368,13 @@
       "decs":"đánh bạc bằng hình thức hoa quả",
       "usage":"sl [số tiền bạn muốn cá cược]",
       "example":"sl 500",
+      "group":"economy"
+   },
+   {
+      "name":"baucua",
+      "decs":"Chơi bầu cua",
+      "usage":"sl [bau, cua, tom, ca, ga, nai] [số tiền bạn muốn cá cược]",
+      "example":"baucua bau 500",
       "group":"economy"
    }
    

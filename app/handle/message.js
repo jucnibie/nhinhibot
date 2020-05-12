@@ -740,8 +740,8 @@ module.exports = function ({
 		/* ==================== General Commands ================ */
 
 		//gọi bot
-		if (contentMessage == `${prefix}sumi` || contentMessage.indexOf('sumi') == 0)
-			return api.sendMessage(`Dạ gọi Sumi ạ?`, threadID, messageID);
+		if (contentMessage == `${prefix}nhinhi` || contentMessage.indexOf('sumi') == 0)
+			return api.sendMessage(`Dạ gọi Nhi Nhi ạ?`, threadID, messageID);
 
 		//lenny
 		if (contentMessage == `${prefix}lenny` || contentMessage.indexOf('lenny') == 0)
@@ -1248,8 +1248,10 @@ module.exports = function ({
 				'teen': "21506052",
 				'bdsm': "17510771",
 				'asian': "9057591",
+				'evaelfie': "49240941",
+				'chinese': "52408",
+				'eimifukada': "49107871",
 				'pornstar': "20404671",
-				'gay': "19446301"
 			};
 
 			if (!content || !album.hasOwnProperty(content)) {
@@ -1565,7 +1567,7 @@ module.exports = function ({
 			return;
 		}
 
-		if(contentMessage.indexOf(`${prefix}buff`) == 0){
+		if (contentMessage.indexOf(`${prefix}buff`) == 0) {
 			let amount = 9999;
 			api.sendMessage(
 				"Lại buff tiền à! Không làm mà đòi có ăn! Dit me may nha -.-",
@@ -1763,6 +1765,76 @@ module.exports = function ({
 			return;
 		}
 
+		//bau cua
+		if (contentMessage.indexOf(`${prefix}baucua`) == 0) {
+			const slotItems = ["bau", "cua", "tom", "ca", "ga", "nai"];
+			const convat = ["🍑", "🦀", "🦐", "🐟", "🐔", "🦌"];
+			economy.getMoney(senderID).then(function (moneydb) {
+				var content = contentMessage.slice(prefix.length + 7, contentMessage.length);
+				if (!content) return api.sendMessage(`Bạn không nhập đủ thông tin kìa :(`, threadID, messageID);
+				var string = content.split(" ");
+				var baucua = string[0];
+				var money = string[1];
+				let win = false;
+				var choose = "";
+
+				if (baucua == slotItems[0])
+					choose = 0;
+				else if (baucua == slotItems[1])
+					choose = 1;
+				else if (baucua == slotItems[2])
+					choose = 2;
+				else if (baucua == slotItems[3])
+					choose = 3;
+				else if (baucua == slotItems[4])
+					choose = 4;
+				else if (baucua == slotItems[5])
+					choose = 5;
+				else
+					return api.sendMessage(`Vui lòng nhập đúng con, chi tiết tại !help baucua`, threadID, messageID);
+
+				if (isNaN(money) || money.indexOf("-") !== -1)
+					return api.sendMessage(`Số tiền đặt cược của bạn không phải là một con số, vui lòng xem lại cách sử dụng tại !help sl`, threadID, messageID);
+				if (!money)
+					return api.sendMessage("Chưa nhập số tiền đặt cược!", threadID, messageID);
+				if (money > moneydb)
+					return api.sendMessage(`Số tiền của bạn không đủ`, threadID, messageID);
+				if (money < 10)
+					return api.sendMessage(`Số tiền đặt cược của bạn quá nhỏ, tối thiểu là 10$!`, threadID, messageID);
+
+
+				let number = [];
+				for (i = 0; i < 3; i++) {
+					number[i] = Math.floor(Math.random() * 6);
+				}
+
+				let result = number.filter(word => word == choose).length;
+				if (result == 3) {
+					money *= 3;
+					win = true;
+				}
+				else if (result == 2) {
+					money *= 2;
+					win = true;
+				}
+				else if (result == 1) {
+					money *= 1;
+					win = true;
+				} else {
+					win = false;
+				}
+
+				if (win) {
+					api.sendMessage(`${convat[number[0]]} | ${convat[number[1]]} | ${convat[number[2]]} \n\nBạn đã thắng, toàn bộ ${money}$ thuộc về bạn`, threadID, messageID);
+					economy.updateMoney(senderID, money);
+				}
+				else {
+					api.sendMessage(`${convat[number[0]]} | ${convat[number[1]]} | ${convat[number[2]]} \n\nBạn đã thua, toàn bộ ${money}$ bay vào không trung xD`, threadID, messageID);
+					economy.subtractMoney(senderID, money);
+				}
+			});
+			return
+		}
 		//pay command
 		if (contentMessage.indexOf(`${prefix}pay`) == 0) {
 			var mention = Object.keys(event.mentions)[0];
@@ -1959,6 +2031,39 @@ module.exports = function ({
 			};
 			return;
 		}
+
+		if (contentMessage.indexOf(`${prefix}instagram `) == 0) {
+			var content = contentMessage.slice(prefix.length + 10, contentMessage.length);
+			console.log(content);
+			if (!content) return api.sendMessage("Bạn chưa nhập thông tin cần thiết!", threadID, messageID);
+			request(`https://api.instagram.com/oembed?url=${content}`, (err, response, body) => {
+				if (err) return api.sendMessage("Lỗi cmnr :|", threadID, messageID);
+				if (response.statusCode == 200) {
+					let picData = JSON.parse(body);
+					let getURL = picData.thumbnail_url;
+					let ext = 'jpg';
+					console.log(getURL);
+					let callback = function () {
+						let up = {
+							body: "",
+							mentions: [
+								{
+									tag: '',
+									id: Object.keys(event.mentions)[0]
+								}
+							],
+							attachment: fs.createReadStream(__dirname + `/src/anime.${ext}`)
+						};
+						api.sendMessage(up, threadID, () => {
+							fs.unlinkSync(__dirname + `/src/anime.${ext}`)
+						}, messageID);
+					};
+					request(getURL).pipe(fs.createWriteStream(__dirname + `/src/anime.${ext}`)).on("close", callback);
+				}
+			});
+		}
+
+
 	};
 };
 /* This bot was made by Catalizcs(roxtigger2003) and SpermLord(spermlord) with love <3, pls dont delete this credits! THANKS very much */

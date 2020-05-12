@@ -30,7 +30,7 @@ login(obj, option, (err, api) => {
 				});
 				break;
 			default:
-			console.error(err);
+				console.error(err);
 		}
 		return;
 	}
