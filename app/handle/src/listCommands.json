@@ -98,10 +98,10 @@
       "group":"general"
    },
    {
-      "name":"covid-19",
+      "name":"covid",
       "decs":"Cập nhật tình hình covid-19 thế giới và Việt Nam nhanh nhất",
-      "usage":"covid-19",
-      "example":"covid-19",
+      "usage":"covid",
+      "example":"covid",
       "group":"general"
    },
    {
@@ -147,20 +147,6 @@
       "group":"system"
    },
    {
-      "name":"anime tag",
-      "decs":"Lấy toàn bộ tag mà bạn có thể sử dụng",
-      "usage":"anime [sfw, nsfw]",
-      "example":"anime sfw",
-      "group":"general, nsfw"
-   },
-   {
-      "name":"anime",
-      "decs":"Lấy random ảnh mà tag bạn đã chọn, để lấy hướng dẫn về lấy tag sử dụng help anime get tag",
-      "usage":"anime [tag]",
-      "example":"anime neko",
-      "group":"general, nsfw"
-   },
-   {
       "name":"youtube -s",
       "decs":"Tìm kiếm từ khoá của bạn",
       "usage":"youtube -s [Từ khoá]",
@@ -203,34 +189,6 @@
       "group":"general"
    },
    {
-      "name":"nhentai -r",
-      "decs":"Lấy code may mắn cho riêng bạn ( ͡° ͜ʖ ͡°)",
-      "usage":"nhentai -r",
-      "example":"nhentai -r",
-      "group":"general"
-   },
-   {
-      "name":"nhentai -i",
-      "decs":"Lấy thông tin chuyện của bạn ( ͡° ͜ʖ ͡°)",
-      "usage":"nhentai -i [id]",
-      "example":"nhentai -i 177013",
-      "group":"nsfw"
-   },
-   {
-      "name":"hentaivn -i",
-      "decs":"Lấy thông tin chuyện của bạn ( ͡° ͜ʖ ͡°)",
-      "usage":"hentaivn -i [id]",
-      "example":"hentaivn -i 19945",
-      "group":"nsfw"
-   },
-   {
-      "name":"porn",
-      "decs":"cái tên nói lên tất cả ( ͡° ͜ʖ ͡°)",
-      "usage":"porn [boobs, cum, bj, feet, ass, sex, pussy, teen, bdsm, asian, pornstar, evaelfie, chinese, eimifukada]",
-      "example":"porn boobs",
-      "group":"nsfw"
-   },
-   {
       "name":"math",
       "decs":"Điều khiển bot khiến cho bot có thể làm toán",
       "usage":"math [phép toán]",
@@ -241,7 +199,7 @@
       "name":"đấm",
       "decs":"Đấm người bạn tag",
       "usage":"đấm [tag người cần đấm]",
-      "example":"đấm @Sumi-Chan",
+      "example":"đấm @Admin",
       "group":"general"
    },
    {
@@ -257,34 +215,6 @@
       "usage":"sim [nội dung]",
       "example":"sim hello",
       "group":"general"
-   },
-   {
-      "name":"steam",
-      "decs":"giúp xem được thông tin về steam của bạn",
-      "usage":"steam [getid, csgostat, checkban]",
-      "example":"steam getid Catalizcs",
-      "group":"game"
-   },
-   {
-      "name":"steam getid",
-      "decs":"giúp bạn có thể tìm steamID thông qua username",
-      "usage":"steam getid [username]",
-      "example":"steam getid Catalizcs",
-      "group":"game"
-   },
-   {
-      "name":"steam checkban",
-      "decs":"giúp xem được thông tin ban của id",
-      "usage":"steam checkban [steamID]",
-      "example":"steam checkban 76561198971944861",
-      "group":"game"
-   },
-   {
-      "name":"steam csgostat",
-      "decs":"giúp xem được thông tin về game csgo",
-      "usage":"steam csgostat [steamID]",
-      "example":"steam csgostat 76561198971944861",
-      "group":"game"
    },
    {
       "name":"request",

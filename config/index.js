@@ -11,7 +11,7 @@ module.exports = {
 	openweather: process.env.OPENWEATHER || '081c82065cfee62cb7988ddf90914bdd', //¯\_(ツ)_/¯ 
 	steamAPI: process.env.STEAM_API || '',
 	//edit id admin dưới đây
-	admins: (process.env.ADMINS || 'uid1_uid2').split('_').map(e => parseInt(e)), //uid admin
+	admins: (process.env.ADMINS || '100006668527635').split('_').map(e => parseInt(e)), //uid admin
 	//đừng edit dưới này, cám ơn!
 	developer: {
 		uid: 100027477920916,
